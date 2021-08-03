@@ -11,6 +11,8 @@ contract ToDoList {
 
     mapping(uint=>Task) public tasks;
 
+    event TaskCreated
+
     constructor() public {
         createTask("check out");
     }
@@ -18,6 +20,8 @@ contract ToDoList {
     function createTask(string memory _content) public {
         taskCount++;
         tasks[taskCount] = Task(taskCount, _content, false);
+
+
 
     }
 }
